@@ -2,6 +2,23 @@
 
 https://mk-sas4ta.appspot.com/api/v1/bookmarks
 
+## Methods
+
+### List of bookmarks
+```
+curl --location --request GET 'https://mk-sas4ta.appspot.com/api/v1/bookmarks'
+```
+
+### Add new bookmark
+```
+curl --location --request POST 'https://mk-sas4ta.appspot.com/api/v1/bookmarks' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "bookName": "Alice Schertle: Little Blue Truck",
+    "pageNumber": 15
+}'
+```
+
 # Tools and Technologies
 
 - Java
