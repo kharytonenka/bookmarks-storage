@@ -1,6 +1,12 @@
-Deployed web service:
+# Demo:
 
 https://mk-sas4ta.appspot.com/api/v1/bookmarks
+
+# Tools and Technologies
+
+- Java
+- Maven
+- Google Cloud: App Engine, Datastore
 
 # Useful information
 
