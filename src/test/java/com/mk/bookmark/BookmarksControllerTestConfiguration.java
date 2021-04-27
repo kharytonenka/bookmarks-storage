@@ -12,13 +12,20 @@ public class BookmarksControllerTestConfiguration {
 
     public static final double DATASTORE_TEST_CONSISTENCY = 1.0;
 
+    private Datastore datastore;
+
     @Bean
-    public BookmarksController getBookmarksController() throws IOException, InterruptedException {
+    public Datastore getDatastore() throws IOException, InterruptedException {
         LocalDatastoreHelper localDatastoreHelper = LocalDatastoreHelper.create(DATASTORE_TEST_CONSISTENCY);
         localDatastoreHelper.start();
 
-        Datastore datastore = localDatastoreHelper.getOptions().getService();
+        datastore = localDatastoreHelper.getOptions().getService();
 
+        return datastore;
+    }
+
+    @Bean
+    public BookmarksController getBookmarksController() {
         return new BookmarksController(datastore);
     }
 }
