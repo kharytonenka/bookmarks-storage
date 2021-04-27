@@ -1,4 +1,4 @@
-package com.mk.bookmarks;
+package com.mk.bookmark;
 
 public class Bookmark {
 
