@@ -1,15 +1,13 @@
-# Demo:
+# Bookmarks Storage
 
-https://mk-sas4ta.appspot.com/api/v1/bookmarks
+Application for storing bookmarks for paper books.
 
-## Methods
+**Demo**: https://mk-sas4ta.appspot.com/api/v1/bookmarks
 
-### List of bookmarks
-```
-curl --location --request GET 'https://mk-sas4ta.appspot.com/api/v1/bookmarks'
-```
+## API Methods
 
 ### Add new bookmark
+
 ```
 curl --location --request POST 'https://mk-sas4ta.appspot.com/api/v1/bookmarks' \
 --header 'Content-Type: application/json' \
@@ -19,11 +17,17 @@ curl --location --request POST 'https://mk-sas4ta.appspot.com/api/v1/bookmarks' 
 }'
 ```
 
+### Get list of bookmarks
+
+```
+curl --location --request GET 'https://mk-sas4ta.appspot.com/api/v1/bookmarks'
+```
+
 # Tools and Technologies
 
 - Java
 - Maven
-- Google Cloud: App Engine, Datastore
+- Google Cloud: App Engine, Datastore, Cloud Build
 
 # Useful information
 

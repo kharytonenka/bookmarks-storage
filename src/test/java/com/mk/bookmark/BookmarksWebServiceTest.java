@@ -19,7 +19,7 @@ public class BookmarksWebServiceTest {
     public void verifyBookmarksPosting() {
         Bookmark bookmark = new Bookmark();
 
-        String bookName = String.format(TEST_BOOK_NAME_PATTERN, RandomStringUtils.randomAlphabetic(5));
+        String bookName = String.format(TEST_BOOK_NAME_PATTERN, RandomStringUtils.randomAlphabetic(10));
 
         bookmark.setBookName(bookName);
         bookmark.setPageNumber(TEST_PAGE_NUMBER);
