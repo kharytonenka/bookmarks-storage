@@ -1,8 +1,11 @@
 steps:
   - name: maven:3-jdk-11
     entrypoint: mvn
-    args: ['test']
+    args: ['-Dtest=BookmarksControllerTest test']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'bash'
     args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+  - name: maven:3-jdk-11
+    entrypoint: mvn
+    args: ['-Dtest=BookmarksWebServiceTest test']
 timeout: '1600s'
