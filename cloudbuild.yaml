@@ -1,8 +1,8 @@
 steps:
   - name: maven:3-jdk-11
     id: static-analysis
-    entrypoint: mvn
-    args: [ 'sonar:sonar', '-Dsonar.login=$$SONAR_TOKEN' ]
+    entrypoint: bash
+    args: [ '-c', 'mvn -Dsonar.login=$$SONAR_TOKEN sonar:sonar' ]
     secretEnv: [ 'SONAR_TOKEN' ]
   - name: maven:3-jdk-11
     id: unit-tests
