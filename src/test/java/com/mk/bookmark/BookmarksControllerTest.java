@@ -27,8 +27,8 @@ class BookmarksControllerTest {
 
         Bookmark expectedBookmark = bookmarksController.getBookmarks().get(0);
 
-        Assertions.assertEquals(expectedBookmark.getBookName(), TEST_BOOK_NAME);
-        Assertions.assertEquals(expectedBookmark.getPageNumber(), TEST_PAGE_NUMBER);
+        Assertions.assertEquals(TEST_BOOK_NAME, expectedBookmark.getBookName());
+        Assertions.assertEquals(TEST_PAGE_NUMBER, expectedBookmark.getPageNumber());
     }
 
 }

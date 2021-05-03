@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.RestTemplate;
 
-public class BookmarksWebServiceTest {
+class BookmarksWebServiceTest {
 
     public static final String HOST = "https://mk-sas4ta.appspot.com";
 
@@ -16,7 +16,7 @@ public class BookmarksWebServiceTest {
     public static final int TEST_PAGE_NUMBER = 23;
 
     @Test
-    public void verifyBookmarksPosting() {
+    void verifyBookmarksPosting() {
         Bookmark bookmark = new Bookmark();
 
         String bookName = String.format(TEST_BOOK_NAME_PATTERN, RandomStringUtils.randomAlphabetic(10));

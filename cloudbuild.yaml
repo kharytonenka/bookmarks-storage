@@ -1,11 +1,23 @@
 steps:
   - name: maven:3-jdk-11
+    id: static-analysis
+    entrypoint: mvn
+    args: [ 'sonar:sonar', '-Dsonar.login=SONAR_TOKEN' ]
+    secretEnv: [ 'SONAR_TOKEN' ]
+  - name: maven:3-jdk-11
+    id: unit-tests
     entrypoint: mvn
     args: [ 'test', '-Dtest=BookmarksControllerTest' ]
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: deploy
     entrypoint: 'bash'
-    args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+    args: [ '-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy' ]
   - name: maven:3-jdk-11
+    id: system-tests
     entrypoint: mvn
     args: [ 'test', '-Dtest=BookmarksWebServiceTest' ]
+availableSecrets:
+  secretManager:
+    - versionName: projects/438394292891/secrets/SONAR_TOKEN
+      env: 'SONAR_TOKEN'
 timeout: '1600s'

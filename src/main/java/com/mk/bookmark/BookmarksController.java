@@ -28,9 +28,9 @@ public class BookmarksController {
         QueryResults<Entity> results = datastore.run(query);
 
         while (results.hasNext()) {
-            Entity entity = results.next();
+            var entity = results.next();
 
-            Bookmark bookmark = new Bookmark();
+            var bookmark = new Bookmark();
 
             bookmark.setId(entity.getKey().getId());
             bookmark.setBookName(entity.getString("book_name"));
@@ -44,8 +44,8 @@ public class BookmarksController {
 
     @PostMapping("/api/v1/bookmarks")
     public void addBookmark(@RequestBody Bookmark bookmark) {
-        KeyFactory keyFactory = datastore.newKeyFactory().setKind("Bookmarks");
-        FullEntity<IncompleteKey> messageEntity = Entity.newBuilder(keyFactory.newKey())
+        var keyFactory = datastore.newKeyFactory().setKind("Bookmarks");
+        FullEntity<IncompleteKey> messageEntity = FullEntity.newBuilder(keyFactory.newKey())
                 .set("book_name", bookmark.getBookName())
                 .set("page_number", bookmark.getPageNumber())
                 .build();
