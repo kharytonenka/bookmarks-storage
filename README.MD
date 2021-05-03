@@ -1,6 +1,6 @@
 # Bookmarks Storage
 
-Application for storing bookmarks for paper books.
+Web Service for storing bookmarks for paper books.
 
 **Demo**: https://mk-sas4ta.appspot.com/api/v1/bookmarks
 
