@@ -2,7 +2,7 @@ steps:
   - name: maven:3-jdk-11
     id: static-analysis
     entrypoint: bash
-    args: [ '-c', 'mvn -Dsonar.login=$$SONAR_TOKEN sonar:sonar' ]
+    args: [ '-c', 'mvn compile compiler:testCompile -Dsonar.login=$$SONAR_TOKEN sonar:sonar' ]
     secretEnv: [ 'SONAR_TOKEN' ]
   - name: maven:3-jdk-11
     id: unit-tests
