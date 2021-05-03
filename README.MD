@@ -27,7 +27,8 @@ curl --location --request GET 'https://mk-sas4ta.appspot.com/api/v1/bookmarks'
 
 - Java
 - Maven
-- Google Cloud: App Engine, Datastore, Cloud Build
+- SonarQube
+- Google Cloud: App Engine, Datastore, Cloud Build, Secret Manager
 
 # Useful information
 
